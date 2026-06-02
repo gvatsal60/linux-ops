@@ -1,50 +1,57 @@
-# 🚀 Project Template
+# Infra Stats
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://img.shields.io/github/license/gvatsal60/project-template)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/gvatsal60/project-template/master.svg)](https://results.pre-commit.ci/latest/github/gvatsal60/project-template/HEAD)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7ae60c7a6c824bfea751067f08618c0d)](https://app.codacy.com/gh/gvatsal60/project-template/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![CodeFactor](https://www.codefactor.io/repository/github/gvatsal60/project-template/badge)](https://www.codefactor.io/repository/github/gvatsal60/project-template)
-![GitHub pull-requests](https://img.shields.io/github/issues-pr/gvatsal60/project-template)
-![GitHub Issues](https://img.shields.io/github/issues/gvatsal60/project-template)
-![GitHub forks](https://img.shields.io/github/forks/gvatsal60/project-template)
-![GitHub stars](https://img.shields.io/github/stars/gvatsal60/project-template)
+![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
+![Shell](https://img.shields.io/badge/Shell-POSIX%20sh-blue.svg)
 
-Welcome to the `Project Template` repository! This serves as your starting point for new projects,
-packed with the essential tools to ensure smooth development, code quality, and consistent documentation.
-Inside, you'll find:
+`infra-stats` is a small shell script that prints a quick snapshot of the current server:
 
-1. 📄 README.md
-2. 📝 LICENSE
-3. 🚫 .gitignore
-4. 🧑‍🤝‍🧑 CODE_OF_CONDUCT.md
-5. ✍️ CONTRIBUTING.md
-6. 💰 FUNDING.yml
-7. 📜 CHANGELOG.md
+1. CPU usage from `top`
+2. Memory usage from `free -h`
+3. Disk usage from `df -h`
+4. Top 5 processes by CPU usage
+5. Top 5 processes by memory usage
 
-## 🛠️ Installation
+## Requirements
 
-To set up your project using this template, just follow these simple steps:
+The script expects these standard Linux utilities to be available:
 
-1. **Clone the repository:**
+1. `top`
+2. `free`
+3. `df`
+4. `ps`
 
-   ```sh
-   git clone https://github.com/gvatsal60/project-template.git
-   cd project-template
-   ```
+## Run
 
-2. **Customize According to Your Project:**
-   * 🎯 Replace `[Project Name]`
-   * 📧 Update `[contact email]`
-   * 💡 Follow `[coding style guide]`
+From the repository root, run:
 
-## 💬 Contributing
+```sh
+sh server-stats.sh
+```
 
-We love contributions! If you'd like to help improve this project, please review our
-[Contribution Guidelines](https://github.com/gvatsal60/project-template/blob/HEAD/CONTRIBUTING.md)
-before submitting pull requests.
+You can also make it executable and run it directly:
 
-## 🛡️ License
+```sh
+chmod +x server-stats.sh
+./server-stats.sh
+```
 
-This project is licensed under the Apache License 2.0 License -
-see the [LICENSE](https://github.com/gvatsal60/project-template/blob/HEAD/LICENSE)
-file for details.
+## Output
+
+The script writes a compact, readable system summary to standard output. If one of the required commands is missing, it prints a message to standard error and skips that section.
+
+## Repository Files
+
+1. `server-stats.sh` - the stats collection script
+2. `README.md` - project overview and usage
+3. `LICENSE` - Apache 2.0 license text
+4. `CHANGELOG.md` - release history
+5. `CONTRIBUTING.md` - contribution guidance
+6. `CODE_OF_CONDUCT.md` - community standards
+
+## Contributing
+
+Contributions are welcome. If you want to improve the script or documentation, open a pull request with a clear description of the change.
+
+## License
+
+This project is licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.
