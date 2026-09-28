@@ -104,7 +104,7 @@ repos:
       - id: checkmake
   # Terraform-py for formatting and validating Terraform files
   - repo: https://github.com/AleksaC/terraform-py
-    rev: "v1.16.3"
+    rev: "v1.16.4"
     hooks:
       - id: tf-fmt
       - id: tf-validate
